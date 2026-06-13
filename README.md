@@ -42,7 +42,7 @@ The system integrates ESP32 microcontrollers with a Spring Boot backend and Reac
 
 ### 🔹 Hardware Setup (ESP32)
 <!-- Add ESP32 / wiring / device images -->
-![ESP32 Setup](Microcontroller/assets/Hardware-Setup-2.png)
+![ESP32 Setup](Microcontroller/assets/Hardware-Setup-2.jpeg)
 
 ---
 
