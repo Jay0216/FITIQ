@@ -1,0 +1,29 @@
+.trainer-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.overview-card {
+  background: var(--dark-800);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: 0.3s ease;
+}
+
+.overview-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-4px);
+}
+
+.overview-card h3 {
+  font-family: 'Syne', sans-serif;
+  margin-bottom: 1rem;
+}
+
+.overview-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+}

@@ -1,0 +1,23 @@
+.owner-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.overview-card {
+  background: var(--dark-800);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+}
+
+.overview-card h3 {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.overview-card p {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--primary);
+}

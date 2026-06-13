@@ -1,0 +1,990 @@
+.appointments {
+  animation: fadeIn 0.5s ease;
+}
+
+.appointments-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.appointments-header-content h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.appointments-header-content p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.book-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.75rem;
+  background: var(--gradient-1);
+  border: none;
+  border-radius: 12px;
+  color: var(--dark);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Booking Panel */
+.booking-panel {
+  background: var(--dark-800);
+  border: 2px solid var(--primary);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  animation: slideDown 0.3s ease;
+}
+
+.booking-header h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Trainers Selection */
+.trainers-selection h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.trainers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.trainer-card {
+  background: var(--dark-700);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.trainer-card:hover:not(.unavailable) {
+  border-color: var(--primary);
+  transform: translateY(-4px);
+}
+
+.trainer-card.selected {
+  background: var(--gradient-1);
+  border-color: transparent;
+}
+
+.trainer-card.selected .trainer-info h4,
+.trainer-card.selected .trainer-info p {
+  color: var(--dark);
+}
+
+.trainer-card.selected .trainer-avatar {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--dark);
+}
+
+.trainer-card.unavailable {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.trainer-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  background: var(--dark-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+}
+
+.trainer-info h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.trainer-info p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.unavailable-badge {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  background: var(--danger);
+  color: white;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* DateTime Selection */
+.datetime-selection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem;
+}
+
+.form-group input[type="date"] {
+  width: 100%;
+  padding: 0.875rem;
+  background: var(--dark-700);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text-primary);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input[type="date"]:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.time-slots {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 0.75rem;
+}
+
+.time-slot {
+  padding: 0.875rem;
+  background: var(--dark-700);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.time-slot:hover {
+  border-color: var(--primary);
+  color: var(--text-primary);
+}
+
+.time-slot.selected {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--dark);
+  font-weight: 700;
+}
+
+.confirm-booking-btn {
+  padding: 1.25rem;
+  background: var(--gradient-2);
+  border: none;
+  border-radius: 12px;
+  color: var(--text-primary);
+  font-family: 'Space Mono', monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.confirm-booking-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.confirm-booking-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Appointments Grid */
+.appointments-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.appointments-section h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.appointments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Appointment Card */
+.appointment-card {
+  background: var(--dark-800);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.appointment-card:hover {
+  border-color: var(--primary);
+  transform: translateX(4px);
+}
+
+.appointment-card.upcoming {
+  border-left: 4px solid var(--primary);
+}
+
+.appointment-card.past {
+  border-left: 4px solid var(--text-secondary);
+  opacity: 0.8;
+}
+
+.appointment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.appointment-trainer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.trainer-avatar-small {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--gradient-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dark);
+}
+
+.appointment-trainer span {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.appointment-type {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.appointment-type.virtual {
+  background: rgba(247, 197, 72, 0.2);
+  color: var(--accent);
+}
+
+.appointment-type.in-person {
+  background: rgba(45, 216, 129, 0.2);
+  color: var(--success);
+}
+
+.completed-badge {
+  padding: 0.5rem 1rem;
+  background: rgba(45, 216, 129, 0.2);
+  color: var(--success);
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.appointment-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.detail-item svg {
+  color: var(--primary);
+}
+
+.appointment-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 0.75rem;
+  background: var(--dark-700);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.action-btn:hover {
+  border-color: var(--primary);
+  color: var(--text-primary);
+}
+
+.action-btn.cancel:hover {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+/* Empty State */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  text-align: center;
+  background: var(--dark-800);
+  border: 1px dashed var(--border);
+  border-radius: 16px;
+}
+
+.empty-state svg {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.empty-state p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.book-btn-small {
+  padding: 0.75rem 1.5rem;
+  background: var(--gradient-1);
+  border: none;
+  border-radius: 8px;
+  color: var(--dark);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.book-btn-small:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .appointments-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .appointments-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .appointments-header-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .booking-panel {
+    padding: 1.5rem;
+  }
+
+  .trainers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .time-slots {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .book-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .appointment-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .time-slots {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* ── ADD THESE TO Appointments.css (replaces/extends the previous calendar block) ── */
+
+.calendar-filter {
+  background: var(--dark-800);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.calendar-filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.calendar-filter-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.calendar-filter-title svg { color: var(--primary); }
+
+.clear-filter-btn {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.375rem 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.clear-filter-btn:hover { border-color: var(--danger); color: var(--danger); }
+
+/* Legend */
+.cal-legend {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+  padding: 0.75rem 1rem;
+  background: var(--dark-700);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+.cal-legend-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.cal-legend-dot.training    { background: var(--primary); }
+.cal-legend-dot.appointment { background: var(--accent); }
+.cal-legend-text { font-size: 0.78rem; color: var(--text-secondary); font-family: 'Space Mono', monospace; }
+
+/* Navigation */
+.mini-calendar { width: 100%; }
+.calendar-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+.cal-nav-btn {
+  background: var(--dark-700);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.cal-nav-btn svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+}
+.cal-nav-btn:hover { border-color: var(--primary); color: var(--primary); }
+.cal-month-label { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; color: var(--text-primary); }
+
+/* Grid */
+.calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.cal-weekday {
+  text-align: center; font-family: 'Space Mono', monospace; font-size: 0.7rem;
+  font-weight: 700; color: var(--text-secondary); padding: 0.375rem 0;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+/* Base day */
+.cal-day {
+  position: relative; aspect-ratio: 1;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: transparent; border: 1px solid transparent; border-radius: 8px;
+  font-family: 'Space Mono', monospace; font-size: 0.8rem;
+  cursor: pointer; transition: all 0.2s ease; gap: 2px;
+}
+
+/* Training day — highlighted, clickable */
+.cal-day.training-day {
+  color: var(--text-primary);
+  background: rgba(45, 216, 129, 0.07);
+  border-color: rgba(45, 216, 129, 0.2);
+}
+.cal-day.training-day:hover:not(.selected) {
+  background: rgba(45, 216, 129, 0.15);
+  border-color: var(--primary);
+}
+
+/* Non-training day — dimmed, not clickable */
+.cal-day.non-training-day {
+  color: var(--text-secondary);
+  opacity: 0.3;
+  cursor: not-allowed;
+  background: transparent;
+  border-color: transparent;
+}
+
+/* Today */
+.cal-day.today.training-day { border-color: var(--primary); color: var(--primary); font-weight: 700; }
+.cal-day.today.non-training-day { border-color: transparent; }
+
+/* Selected */
+.cal-day.selected {
+  background: var(--gradient-1);
+  border-color: transparent;
+  color: var(--dark);
+  font-weight: 700;
+}
+.cal-day.selected .apt-dot { background: var(--dark); }
+
+/* Appointment dot */
+.apt-dot {
+  width: 4px; height: 4px; border-radius: 50%;
+  background: var(--accent, #f7c548);
+  position: absolute; bottom: 5px;
+}
+
+/* Active filter label */
+.filter-active-label {
+  margin-top: 1rem; padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.85rem; color: var(--text-secondary);
+}
+.filter-active-label strong { color: var(--text-primary); }
+
+/* Hint below date input in booking form */
+.training-days-hint {
+  margin-top: 0.5rem; font-size: 0.78rem;
+  color: var(--primary); font-family: 'Space Mono', monospace;
+}
+
+/* ── Paste into Appointments.css ── */
+
+/* ── Plan Filter Pills ────────────────────────────────────────────────────── */
+.plan-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.plan-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 1rem;
+  background: var(--dark-800);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  color: var(--text-secondary);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.plan-pill:hover { border-color: var(--primary); color: var(--text-primary); }
+.plan-pill.active { background: var(--gradient-1); border-color: transparent; color: var(--dark); }
+.plan-pill.active svg { color: var(--dark); }
+
+.plan-pill-active-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--dark); opacity: 0.55; flex-shrink: 0;
+}
+.plan-pill:not(.active) .plan-pill-active-dot { background: var(--primary); opacity: 1; }
+
+/* ── Plan date range bar ──────────────────────────────────────────────────── */
+.plan-date-range-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--dark-800);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--primary);
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+.plan-date-range-label {
+  display: flex; align-items: center; gap: 0.5rem;
+  font-family: 'Space Mono', monospace; font-size: 0.8rem;
+  color: var(--text-primary); font-weight: 700;
+}
+.plan-date-range-label svg { color: var(--primary); }
+.plan-date-range-days {
+  font-family: 'Space Mono', monospace; font-size: 0.78rem; color: var(--primary);
+  background: rgba(45, 216, 129, 0.1); padding: 0.25rem 0.75rem;
+  border-radius: 100px; border: 1px solid rgba(45, 216, 129, 0.25);
+}
+
+/* ── Booking context ──────────────────────────────────────────────────────── */
+.booking-plan-context { margin-top: 0.25rem; font-size: 0.85rem; color: var(--text-secondary); }
+.booking-plan-context strong { color: var(--primary); }
+
+/* ── Calendar filter container ────────────────────────────────────────────── */
+.calendar-filter {
+  background: var(--dark-800);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+.calendar-filter-header {
+  display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;
+}
+.calendar-filter-title {
+  display: flex; align-items: center; gap: 0.6rem;
+  font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; color: var(--text-primary);
+}
+.calendar-filter-title svg { color: var(--primary); }
+.clear-filter-btn {
+  background: none; border: 1px solid var(--border); border-radius: 8px;
+  color: var(--text-secondary); font-family: 'Space Mono', monospace;
+  font-size: 0.75rem; font-weight: 700; padding: 0.375rem 0.875rem;
+  cursor: pointer; transition: all 0.2s ease;
+}
+.clear-filter-btn:hover { border-color: var(--danger); color: var(--danger); }
+
+/* ── Legend ───────────────────────────────────────────────────────────────── */
+.cal-legend {
+  display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;
+  margin-bottom: 1.25rem; padding: 0.75rem 1rem;
+  background: var(--dark-700); border-radius: 10px; border: 1px solid var(--border);
+}
+.cal-legend-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.cal-legend-dot.training    { background: var(--primary); }
+.cal-legend-dot.rest        { background: var(--text-secondary); opacity: 0.5; }
+.cal-legend-dot.appointment { background: var(--accent, #f7c548); }
+.cal-legend-text { font-size: 0.78rem; color: var(--text-secondary); font-family: 'Space Mono', monospace; }
+
+/* ── Calendar navigation ──────────────────────────────────────────────────── */
+.mini-calendar { width: 100%; }
+.calendar-nav {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;
+}
+.cal-nav-btn {
+  background: var(--dark-700); border: 1px solid var(--border); border-radius: 8px;
+  color: var(--text-secondary);
+  width: 32px; height: 32px; min-width: 32px; min-height: 32px;
+  padding: 0; line-height: 1; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: all 0.2s ease;
+}
+.cal-nav-btn svg { display: block; width: 16px; height: 16px; pointer-events: none; }
+.cal-nav-btn:hover { border-color: var(--primary); color: var(--primary); }
+.cal-month-label {
+  font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; color: var(--text-primary);
+}
+
+/* ── Calendar grid ────────────────────────────────────────────────────────── */
+.calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.cal-weekday {
+  text-align: center; font-family: 'Space Mono', monospace;
+  font-size: 0.7rem; font-weight: 700; color: var(--text-secondary);
+  padding: 0.375rem 0; text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+/* ── Base day button ──────────────────────────────────────────────────────── */
+.cal-day {
+  position: relative; aspect-ratio: 1;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: transparent; border: 1px solid transparent; border-radius: 8px;
+  font-family: 'Space Mono', monospace; font-size: 0.8rem;
+  cursor: pointer; transition: all 0.18s ease; gap: 2px;
+  padding: 0;
+}
+
+/* ── STATE 1: Training day — bright green, fully interactive ──────────────── */
+.cal-day.cal-day--training {
+  color: var(--primary);
+  background: rgba(45, 216, 129, 0.13);
+  border-color: rgba(45, 216, 129, 0.35);
+  font-weight: 700;
+}
+.cal-day.cal-day--training:hover:not(.selected) {
+  background: rgba(45, 216, 129, 0.26);
+  border-color: var(--primary);
+  transform: scale(1.07);
+}
+
+/* ── STATE 2: Rest day — inside plan range but not a training day ─────────── */
+.cal-day.cal-day--rest {
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.06);
+  font-weight: 400;
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* ── STATE 3: Out of range — completely outside plan ─────────────────────── */
+.cal-day.cal-day--out-of-range {
+  color: var(--text-secondary);
+  background: transparent;
+  border-color: transparent;
+  opacity: 0.2;
+  cursor: not-allowed;
+  font-weight: 400;
+}
+
+/* ── Today ────────────────────────────────────────────────────────────────── */
+.cal-day.today.cal-day--training {
+  background: rgba(45, 216, 129, 0.22);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(45, 216, 129, 0.25);
+}
+.cal-day.today.cal-day--rest,
+.cal-day.today.cal-day--out-of-range {
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: none;
+}
+
+/* ── Selected (active filter) ─────────────────────────────────────────────── */
+.cal-day.selected {
+  background: var(--primary) !important;
+  border-color: transparent !important;
+  color: var(--dark) !important;
+  font-weight: 700;
+  transform: scale(1.07);
+  opacity: 1 !important;
+}
+.cal-day.selected .apt-dot { background: var(--dark); }
+
+/* ── Appointment dot ──────────────────────────────────────────────────────── */
+.apt-dot {
+  width: 4px; height: 4px; border-radius: 50%;
+  background: var(--accent, #f7c548);
+  position: absolute; bottom: 4px;
+}
+
+/* ── Active filter label ──────────────────────────────────────────────────── */
+.filter-active-label {
+  margin-top: 1rem; padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.85rem; color: var(--text-secondary);
+}
+.filter-active-label strong { color: var(--text-primary); }
+
+/* ── Trainer type badge ───────────────────────────────────────────────────── */
+.trainer-type-badge {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  margin-top: 0.35rem; padding: 0.2rem 0.6rem;
+  background: rgba(45, 216, 129, 0.12); border: 1px solid rgba(45, 216, 129, 0.3);
+  border-radius: 100px; font-size: 0.72rem; font-weight: 700;
+  color: var(--primary); font-family: 'Space Mono', monospace; white-space: nowrap;
+}
+
+.trainers-empty { color: var(--text-secondary); font-size: 0.9rem; padding: 1rem 0; }
+
+.training-days-hint {
+  margin-top: 0.5rem; font-size: 0.78rem;
+  color: var(--primary); font-family: 'Space Mono', monospace;
+}
+
+/* ── Booking panel close button ───────────────────────────────────────────── */
+.booking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+.booking-close-btn {
+  background: var(--dark-700);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  width: 34px; height: 34px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: all 0.2s ease; flex-shrink: 0;
+}
+.booking-close-btn:hover { border-color: var(--danger); color: var(--danger); }
+
+/* Pre-filled date context line in booking header */
+.booking-date-context {
+  display: flex; align-items: center; gap: 0.4rem;
+  margin-top: 0.4rem; font-size: 0.9rem;
+  color: var(--primary); font-weight: 700;
+}
+.booking-date-context svg { flex-shrink: 0; }
+
+/* ── Remove pointer-events block from non-training days (no longer disabled) ── */
+.cal-day--rest,
+.cal-day--out-of-range {
+  pointer-events: none;   /* visually inert, no hover, no click */
+}
+
+/* ── Inline date validation error ────────────────────────────────────────── */
+.date-error-hint {
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--danger);
+  font-family: 'Space Mono', monospace;
+}
+
+.form-group input.input-error {
+  border-color: var(--danger) !important;
+}
+
+/* ── Section date badge ───────────────────────────────────────────────────── */
+.section-date-badge {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.75rem;
+  padding: 0.2rem 0.65rem;
+  background: rgba(45, 216, 129, 0.15);
+  border: 1px solid rgba(45, 216, 129, 0.3);
+  border-radius: 100px;
+  font-size: 0.72rem;
+  font-family: 'Space Mono', monospace;
+  color: var(--primary);
+  font-weight: 700;
+  vertical-align: middle;
+}
+
+/* ── Empty state hint ─────────────────────────────────────────────────────── */
+.empty-state-hint {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  opacity: 0.7;
+  margin-top: -0.75rem;
+}
+
+/* ── Confirm button with icon ─────────────────────────────────────────────── */
+.confirm-booking-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+/* ── Completed badge fix — inline checkmark + text ───────────────────────── */
+.completed-badge {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.875rem;
+  background: rgba(45, 216, 129, 0.15);
+  color: var(--success, #2dd881);
+  border: 1px solid rgba(45, 216, 129, 0.3);
+  border-radius: 100px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-family: 'Space Mono', monospace;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+/* ── Completed badge — final fix ──────────────────────────────────────────── */
+.completed-badge {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.35rem 0.75rem;
+  background: rgba(45, 216, 129, 0.15);
+  color: var(--success, #2dd881);
+  border: 1px solid rgba(45, 216, 129, 0.3);
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-family: 'Space Mono', monospace;
+  white-space: nowrap;
+  line-height: 1;
+  width: fit-content;        /* don't stretch full width */
+  align-self: flex-start;    /* don't stretch in a flex column parent */
+}
+
+.completed-badge svg {
+  display: block;            /* remove inline baseline gap */
+  flex-shrink: 0;
+  color: var(--success, #2dd881);
+}

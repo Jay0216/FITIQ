@@ -1,0 +1,56 @@
+.owner-members {
+  width: 100%;
+}
+
+.owner-members h2 {
+  margin-bottom: 1.5rem;
+  font-family: 'Syne', sans-serif;
+  color: var(--text-primary);
+}
+
+.owner-members table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--dark-800);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.owner-members thead {
+  background: var(--dark-700);
+}
+
+.owner-members th,
+.owner-members td {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.owner-members th {
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 0.95rem;
+}
+
+.owner-members td button {
+  background: var(--danger);
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.owner-members td button:hover {
+  background: #ff3b3b;
+}
+
+.owner-members tbody tr:hover {
+  background: var(--dark-600);
+  transition: background 0.3s ease;
+}

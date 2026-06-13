@@ -1,0 +1,56 @@
+.tracking-container h2 {
+  font-family: 'Syne', sans-serif;
+  margin-bottom: 2rem;
+}
+
+.tracking-table-wrapper {
+  overflow-x: auto;
+}
+
+.tracking-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--dark-800);
+  border-radius: 12px;
+}
+
+.tracking-table th,
+.tracking-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.tracking-table th {
+  background: var(--dark-700);
+}
+
+.status-done {
+  color: var(--success);
+  font-weight: 700;
+}
+
+.status-missed {
+  color: var(--danger);
+  font-weight: 700;
+}
+
+.feedback-btn {
+  background: var(--gradient-1);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.log-meta {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.member-note {
+  background: var(--dark-700);
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
