@@ -63,3 +63,8 @@ This project is currently under active development.
 Features and integrations are being continuously improved and tested.
 
 ---
+
+## ⚠️ Disclaimer
+This project is for portfolio and demonstration purposes only.  
+All content and images are used for showcasing development work.  
+Do not copy, reuse, or distribute without permission.
