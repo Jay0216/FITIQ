@@ -43,11 +43,13 @@ The system integrates ESP32 microcontrollers with a Spring Boot backend and Reac
 ### 🔹 Hardware Setup (ESP32)
 <!-- Add ESP32 / wiring / device images -->
 ![ESP32 Setup](Microcontroller/assets/Hardware-Setup-2.jpeg)
+![ESP32 Setup](Microcontroller/assets/Hardware-Setup-3.jpeg)
+![ESP32 Setup](Microcontroller/assets/Hardware-Setup-5.jpeg)
 
 ---
 
 ## 🔌 Features (In Progress)
-- Fingerprint-based authentication system
+- Fingerprint-based and QR Code based authentication system
 - Real-time door access control using ESP32
 - Remote unlock via backend API
 - Event logging (GRANTED / DENIED access)
@@ -57,7 +59,7 @@ The system integrates ESP32 microcontrollers with a Spring Boot backend and Reac
 ---
 
 ## 🚧 Project Status
-This project is currently under active development for a client.  
+This project is currently under active development.
 Features and integrations are being continuously improved and tested.
 
 ---
