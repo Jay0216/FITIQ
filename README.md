@@ -36,7 +36,7 @@ The system integrates ESP32 microcontrollers with a Spring Boot backend and Reac
 ### 🔹 Developed System (Current Progress)
 <!-- Add your developed system images here -->
 ![System UI 1](Microcontroller/assets/Landing-Page-1.png)  
-![System UI 2](assets/system-2.png)
+![System UI 2](Microcontroller/assets/Serverside-setup.png)
 
 ---
 
